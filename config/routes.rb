@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root :to => "owned_things#index"
   # Routes for the Owned_thing resource:
   # CREATE
   get "/owned_things/new", :controller => "owned_things", :action => "new"

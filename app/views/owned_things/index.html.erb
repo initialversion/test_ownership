@@ -15,7 +15,13 @@
 
       <% @owned_things.each do |owned_thing| %>
       <tr>
-        <td><%= owned_thing.user.created_at %></td>
+        <td>
+          <% if owned_thing.user.present? %>
+            <a href="/owners/<%= owned_thing.user.id %>">
+              <%= owned_thing.user.created_at %>
+            </a>
+          <% end %>
+        </td>
         <td>
           <a href="/owned_things/<%= owned_thing.id %>" class="btn btn-primary">Show</a>
           

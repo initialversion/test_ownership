@@ -14,12 +14,14 @@
       <a href="/owned_things" class="btn btn-primary">
         Back
       </a>
-      <a href="/owned_things/<%= @owned_thing.id %>/edit" class="btn btn-warning">
-        Edit
-      </a>
-      <a href="/delete_owned_thing/<%= @owned_thing.id %>" class="btn btn-danger" rel="nofollow">
-        Delete
-      </a>
+      <% if current_user == @owned_thing.user %>
+        <a href="/owned_things/<%= @owned_thing.id %>/edit" class="btn btn-warning">
+          Edit
+        </a>
+        <a href="/delete_owned_thing/<%= @owned_thing.id %>" class="btn btn-danger" rel="nofollow">
+          Delete
+        </a>
+      <% end %>
     </div>
   </div>
 </div>

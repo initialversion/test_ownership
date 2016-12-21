@@ -1,4 +1,14 @@
 class OwnedThingsController < ApplicationController
+  before_action :current_user_must_be_owned_thing_user, :only => [:edit, :update, :destroy]
+
+  def current_user_must_be_owned_thing_owner
+    owned_thing = OwnedThing.find(params[:id])
+
+    unless current_user == owned_thing.user
+      redirect_to :back, :alert => "You are not authorized for that."
+    end
+  end
+
   def index
     @owned_things = OwnedThing.all
 

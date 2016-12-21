@@ -15,7 +15,7 @@
 
       <% @owned_things.each do |owned_thing| %>
       <tr>
-        <td><%= owned_thing.user_id %></td>
+        <td><%= owned_thing.user.created_at %></td>
         <td>
           <a href="/owned_things/<%= owned_thing.id %>" class="btn btn-primary">Show</a>
           <a href="/owned_things/<%= owned_thing.id %>/edit" class="btn btn-warning">Edit</a>

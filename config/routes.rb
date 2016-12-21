@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
   root :to => "owned_things#index"
   # Routes for the Owned_thing resource:
   # CREATE

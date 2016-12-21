@@ -20,7 +20,7 @@ class OwnedThingsController < ApplicationController
   def create
     @owned_thing = OwnedThing.new
 
-    @owned_thing.user_id = params[:user_id]
+    
 
     save_status = @owned_thing.save
 
@@ -47,7 +47,7 @@ class OwnedThingsController < ApplicationController
   def update
     @owned_thing = OwnedThing.find(params[:id])
 
-    @owned_thing.user_id = params[:user_id]
+    
 
     save_status = @owned_thing.save
 

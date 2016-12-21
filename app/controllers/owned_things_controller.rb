@@ -10,7 +10,7 @@ class OwnedThingsController < ApplicationController
   end
 
   def index
-    @owned_things = OwnedThing.all
+    @owned_things = OwnedThing.page(params[:page]).per(10)
 
     render("owned_things/index.html.erb")
   end

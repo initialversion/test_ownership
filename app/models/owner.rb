@@ -1,6 +1,10 @@
 class Owner < ApplicationRecord
   # Direct associations
 
+  has_many   :owned_things,
+             :foreign_key => "user_id",
+             :dependent => :destroy
+
   # Indirect associations
 
   # Validations

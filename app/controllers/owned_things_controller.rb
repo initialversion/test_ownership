@@ -32,6 +32,7 @@ class OwnedThingsController < ApplicationController
     @owned_thing = OwnedThing.new
 
     
+    @owned_thing.name = params[:name]
 
     save_status = @owned_thing.save
 
@@ -59,6 +60,7 @@ class OwnedThingsController < ApplicationController
     @owned_thing = OwnedThing.find(params[:id])
 
     
+    @owned_thing.name = params[:name]
 
     save_status = @owned_thing.save
 
